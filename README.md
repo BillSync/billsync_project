@@ -96,6 +96,66 @@ Check Angular version:
 ```sh
 ng version
 ```
+## Git Workflow for Submodules
+
+### **Pulling Changes from Remote**
+Before making changes, always **pull the latest updates**:
+
+#### Pull all submodules and main repo:
+```sh
+git pull --recurse-submodules
+```
+
+#### Pull updates for a specific submodule:
+```sh
+cd backend  # or frontend, dependencies
+git pull origin main  # Ensure you’re on the correct branch
+```
+
+### **Making Changes in a Submodule**
+1. Navigate to the specific submodule:
+   ```sh
+   cd backend  # or frontend, dependencies
+   ```
+2. Make changes and commit:
+   ```sh
+   git add .
+   git commit -m "Updated backend feature"
+   ```
+3. Push changes to the respective submodule:
+   ```sh
+   git push origin main
+   ```
+
+### **Updating Main Project (`billsync_project`) After Pushing to Submodules**
+After pushing changes in a submodule (like backend), update the main project to ensure everything is in sync:
+
+1. **Go back to the main project root:**
+   ```sh
+   cd ..  # Navigate back to billsync_project
+   ```
+2. **Check for changes in submodules:**
+   ```sh
+   git status
+   ```
+3. **Stage the updated submodule reference:**
+   ```sh
+   git add backend  # or frontend, dependencies
+   ```
+4. **Commit and push the changes in the main project:**
+   ```sh
+   git commit -m "Updated backend submodule reference"
+   git push origin main
+   ```
+
+### **When to Pull Before Pushing in Backend**
+- Always pull the latest changes **before making modifications** to avoid conflicts.
+- If other team members have updated the **backend**, first run:
+  ```sh
+  cd backend
+git pull origin main
+  ```
+- If there are merge conflicts, resolve them before pushing your changes.
 
 ## How to Build and Start Each Module
 
@@ -104,7 +164,6 @@ ng version
 Navigate to the backend directory and build the project using Maven:
 
 ```sh
-cd backend 
 cd backend
 mvn clean install
 ```
@@ -120,7 +179,6 @@ mvn spring-boot:run
 Navigate to the frontend directory:
 
 ```sh
-cd frontend 
 cd frontend
 ```
 
