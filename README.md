@@ -15,7 +15,9 @@ Each module functions independently and can also be cloned together using Git su
 To clone the project along with its submodules, use:
 
 ```sh
-git clone --recurse-submodules https://github.com/Callisto30/billsync_project.git
+git clone https://github.com/Callisto30/billsync_backend.git
+git clone https://github.com/Callisto30/billsync_frontend.git
+git clone https://github.com/Callisto30/billsync_dependencies.git
 ```
 
 ## Navigating to Submodules
@@ -23,7 +25,7 @@ git clone --recurse-submodules https://github.com/Callisto30/billsync_project.gi
 After cloning, navigate to the respective directories:
 
 ```sh
-cd billsync_project
+
 cd backend    # Navigate to backend (billsync_backend)
 cd frontend   # Navigate to frontend (billsync_frontend)
 ```
@@ -96,69 +98,39 @@ Check Angular version:
 ```sh
 ng version
 ```
-## Git Workflow for Submodules
+
+
+## Git Workflow for Each Repository
 
 ### **Pulling Changes from Remote**
 Before making changes, always **pull the latest updates**:
 
-#### Pull all submodules and main repo:
+#### Pull updates for all repositories:
 ```sh
-git pull --recurse-submodules
+cd billsync_backend && git pull origin main
+cd ../billsync_frontend && git pull origin main
+cd ../billsync_dependencies && git pull origin main
 ```
 
-#### Pull updates for a specific submodule:
-```sh
-cd backend  # or frontend, dependencies
-git pull origin main  # Ensure you’re on the correct branch
-```
-
-### **Making Changes in a Submodule**
-1. Navigate to the specific submodule:
+### **Making Changes and Pushing**
+1. Navigate to the specific repository:
    ```sh
-   cd backend  # or frontend, dependencies
+   cd billsync_backend  # or billsync_frontend, billsync_dependencies
    ```
 2. Make changes and commit:
    ```sh
    git add .
    git commit -m "Updated backend feature"
    ```
-3. Push changes to the respective submodule:
+3. Push changes to the respective repository:
    ```sh
    git push origin main
    ```
 
-### **Updating Main Project (`billsync_project`) After Pushing to Submodules**
-After pushing changes in a submodule (like backend), update the main project to ensure everything is in sync:
-
-1. **Go back to the main project root:**
-   ```sh
-   cd ..  # Navigate back to billsync_project
-   ```
-2. **Check for changes in submodules:**
-   ```sh
-   git status
-   ```
-3. **Stage the updated submodule reference:**
-   ```sh
-   git add backend  # or frontend, dependencies
-   ```
-4. **Commit and push the changes in the main project:**
-   ```sh
-   git commit -m "Updated backend submodule reference"
-   git push origin main
-   ```
-
-### **When to Pull Before Pushing in Backend**
-- Always pull the latest changes **before making modifications** to avoid conflicts.
-- If other team members have updated the **backend**, first run:
-  ```sh
-  cd backend
-git pull origin main
-  ```
-- If there are merge conflicts, resolve them before pushing your changes.
-
-## How to Build and Start Each Module
-
+### **Best Practices to Keep Everything in Sync**
+- **Always pull the latest changes** before starting work.
+- **Ensure all repositories are updated** when integrating changes.
+- **Use feature branches** for development and merge via pull requests.
 ### Backend (billsync_backend)
 
 Navigate to the backend directory and build the project using Maven:
