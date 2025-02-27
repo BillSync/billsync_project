@@ -179,6 +179,7 @@ mvn spring-boot:run
 Navigate to the frontend directory:
 
 ```sh
+
 cd frontend
 ```
 
