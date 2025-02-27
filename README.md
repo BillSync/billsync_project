@@ -39,7 +39,6 @@ java -version
 ```
 
 If not installed, download it from:
-- [Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
 - [OpenJDK](https://openjdk.org/)
 
 #### Set Java Environment Variables (Windows)
