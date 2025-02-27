@@ -6,7 +6,7 @@ Billsync is a comprehensive solution for managing billing processes efficiently.
 
 - **billsync_backend** (Backend - Java, Spring Boot)
 - **billsync_frontend** (Frontend - Angular)
-- **Dependencies** (Common dependencies for backend and frontend)
+- **Dependencies** (Common dependencies for backend)
 
 Each module functions independently and can also be cloned together using Git submodules.
 
