@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Callisto30/billsync_backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Callisto30/billsync_frontend.git
+[submodule "dependencies"]
+	path = dependencies
+	url = https://github.com/Callisto30/project_dependencies.git
