@@ -17,7 +17,7 @@ To clone the project along with its submodules, use:
 ```sh
 git clone https://github.com/Callisto30/billsync_backend.git
 git clone https://github.com/Callisto30/billsync_frontend.git
-git clone https://github.com/Callisto30/billsync_dependencies.git
+git clone https://github.com/BillSync/project_dependencies.git
 ```
 
 ## Navigating to Submodules
